@@ -1,0 +1,25 @@
+
+.animal-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 300px;
+  padding: 30px;
+  background-color: rgb(131, 204, 238);
+  color: rgb(16, 7, 45);
+  border-radius: 12px;
+  font-size: 20px;
+  text-align: center;
+}
+.animal-card-wrapper > img {
+  width: 270px;
+  height: 270px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+
+.animal-card-wrapper > h3 {
+  margin: 0;
+}

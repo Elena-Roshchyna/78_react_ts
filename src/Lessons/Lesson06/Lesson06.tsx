@@ -106,6 +106,49 @@ function Lesson06() {
         return "Можно идти!";
     }
   };
+
+  // //////////////////////////////////////////////////////////
+/*Создайте enum AccessLevel:
+Guest
+User
+Moderator
+Admin
+Напишите функцию сanDeletePost, которая принимает AccessLevel и возвращает true, если пользователь может удалить пост.
+Удалять пост могут только Moderator и Admin.*/
+
+enum AccessLevel {
+  Guest = "GUEST",
+  User = "USER",
+  Moderator = "MODERATOR",
+  Admin = "ADMIN",
+}
+
+const canDeletePost = (level: AccessLevel): boolean => {
+  switch (level) {
+    case AccessLevel.Moderator:
+    case AccessLevel.Admin:
+      return true;
+    default:
+      return false;
+  }
+};
+
+// FROM KATYA 
+
+  enum AccessLevel {
+    GUEST = "Guest",
+    USER = "User",
+    MODERATOR = "Moderator",
+    ADMIN = "Admin",
+  }
+  const сanDeletePost = (role: AccessLevel): boolean => {
+    if (role === AccessLevel.MODERATOR || role === AccessLevel.ADMIN) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   
   return <div className="lesson06-wrapper">{getAction(TRAFFIC_LIGHT.GREEN)}</div>;
 }

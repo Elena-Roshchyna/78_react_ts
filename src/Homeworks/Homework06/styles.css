@@ -1,0 +1,8 @@
+.homework06-wrapper {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  gap: 30px;              
+  padding: 40px;
+  width: 100%;
+}

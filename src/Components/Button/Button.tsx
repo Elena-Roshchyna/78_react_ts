@@ -1,14 +1,14 @@
-// Упрощенный импорт стилей
-import "./styles.css";
-import type { ButtonProps } from "./types";
-
-function Button({ name, type = "button", onClick }: ButtonProps) {
-  return (
-    <button className="my-button" type={type} onClick={onClick}>
-      {name}
-    </button>
-  );
-}
-// Компоненты экспортируем по умолчанию
-export default Button;
+import styled from "@emotion/styled";
+export const MyButton = styled.button`
+  /* width: 350px; */
+  width: 100%;
+  padding: 20px;
+  background-color: rgb(18, 18, 86);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+`;
 
