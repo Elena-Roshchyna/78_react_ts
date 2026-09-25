@@ -21,25 +21,33 @@ export default AnimalCard;*/
 // компонента сразу делают деструктуризацию - {name, species, imgSrc}
 
 
-import "./styles.css";
+import { AnimalCardWrapper, Title, AnimalSpecies, AnimalImage } from "./styles";
+import type { AnimalCardProps } from "../../Homeworks/Homework06/types";
 
-interface AnimalCardProps {
+
+/*interface AnimalCardProps {
     name: string;
     species?: string;
     imgSrc: string;
 }
+*/
 
 function AnimalCard({
     name,
-    species = "unknow animal",
+    species = "unknown animal",
     imgSrc,
 }: AnimalCardProps) {
     return (
-        <div className="animal-card-wrapper">
-      <h3>{name}</h3>
-      <div>{species}</div>
-      <img src={imgSrc} alt={name} />
-    </div>
+      <AnimalCardWrapper>
+
+      <Title>{name}</Title>
+      <AnimalSpecies>{species}</AnimalSpecies>
+      <AnimalImage src={imgSrc} alt={name} />
+
+      </AnimalCardWrapper>
+        
+      
+   
   );
 }
 

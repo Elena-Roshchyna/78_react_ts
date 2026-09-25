@@ -1,29 +1,31 @@
 import { useState } from "react";
+
 import Button from "../Button/Button";
-import "./styles.css";
+import { ButtonWrapper, CounterWithStateWrapper, Result } from "./styles";
+
 function CounterWithState() {
   const [count, setCount] = useState<number>(0);
+
   const onMinus = (): void => {
     setCount((prevState) => prevState - 1);
   };
+
   const onPlus = (): void => {
     setCount((prev) => prev + 1);
   };
+
   return (
-    <div className="counter-with-state-wrapper">
-      <div className="button-wrapper">
+    <CounterWithStateWrapper>
+      <ButtonWrapper>
         <Button name="-" onClick={onMinus} />
-      </div>
-      <div className="result">{count}</div>
-      <div className="button-wrapper">
+      </ButtonWrapper>
+      <Result>{count}</Result>
+      <ButtonWrapper>
         <Button name="+" onClick={onPlus} />
-      </div>
-    </div>
+      </ButtonWrapper>
+    </CounterWithStateWrapper>
   );
 }
+
 export default CounterWithState;
 
-// Обновление компонентов в React возможно только в 3-х случаях
-// - когда изменяется значение props
-// - изменение состояния (state)
-// - с помощью специальной функции (forceUpdate)
