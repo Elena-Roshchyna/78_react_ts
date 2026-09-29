@@ -10,8 +10,9 @@ import GlobalStyles from "./styles/GlobalStyles";
 
 // Homeworks imports
 // import Homework06 from "./Homeworks/Homework06/Homework06";
-import Homework07 from "./Homeworks/Homework07/Homework07";
-
+// import Homework07 from "./Homeworks/Homework07/Homework07";
+import Homework08 from "./Homeworks/Homework08/Homework08";
+  
 function App() {
   return (
     // <></> - fragment. Он позволяет задать обертку (выступает в качестве родителя), чтобы
@@ -30,7 +31,9 @@ function App() {
 
       {/* Homework 06 */}
        {/*<Homework06 />*/}
-       <Homework07 />
+       {/*<Homework07 />*/}
+       <Homework08 />
+
     </>
   );
 }

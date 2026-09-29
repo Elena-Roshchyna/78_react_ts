@@ -1,14 +1,13 @@
-import styled from "@emotion/styled";
-export const MyButton = styled.button`
-  /* width: 350px; */
-  width: 100%;
-  padding: 20px;
-  background-color: rgb(18, 18, 86);
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-`;
+import type { ButtonProps } from "./types";
+import { MyButton } from "./styles";
+
+function Button({ name, type = "button", onClick }: ButtonProps) {
+  return (
+    <MyButton type={type} onClick={onClick}>
+      {name}
+    </MyButton>
+  );
+}
+
+export default Button;
 
