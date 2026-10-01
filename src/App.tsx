@@ -6,18 +6,15 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson06 from "./lessons/Lesson06/Lesson06";
 // import Lesson07 from "./lessons/Lesson07/Lesson07";
 // import Lesson08 from "./lessons/Lesson08/Lesson08";
-   
+import Lesson09 from "./Lessons/Lesson09/Lesson09";
 
 // Homeworks imports
 // import Homework06 from "./Homeworks/Homework06/Homework06";
 // import Homework07 from "./Homeworks/Homework07/Homework07";
-import Homework08 from "./Homeworks/Homework08/Homework08";
-  
+// import Homework08 from "./Homeworks/Homework08/Homework08";
+
 function App() {
   return (
-    // <></> - fragment. Он позволяет задать обертку (выступает в качестве родителя), чтобы
-    // не было ошибок если у нас есть несколько соседних элементов, но на самой странице никакой
-    // новый элемент добавлен не будет
     <>
       <GlobalStyles />
       {/* Lesson 05. TypeScript */}
@@ -30,10 +27,11 @@ function App() {
       {/* <Lesson08 /> */}
 
       {/* Homework 06 */}
-       {/*<Homework06 />*/}
-       {/*<Homework07 />*/}
-       <Homework08 />
+      {/*<Homework06 />*/}
+      {/*<Homework07 />*/}
+      {/*<Homework08 />*/}
 
+      <Lesson09 />
     </>
   );
 }
