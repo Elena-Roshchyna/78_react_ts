@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import GlobalStyles from "./styles/GlobalStyles";
 
 // Lessons imports
@@ -6,15 +5,19 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson06 from "./lessons/Lesson06/Lesson06";
 // import Lesson07 from "./lessons/Lesson07/Lesson07";
 // import Lesson08 from "./lessons/Lesson08/Lesson08";
-import Lesson09 from "./Lessons/Lesson09/Lesson09";
+// import Lesson09 from "./lessons/Lesson09/Lesson09";
+
+// import Lesson10 from "./Lessons/Lesson10/Lesson10";
+
 
 // Homeworks imports
-// import Homework06 from "./Homeworks/Homework06/Homework06";
-// import Homework07 from "./Homeworks/Homework07/Homework07";
-// import Homework08 from "./Homeworks/Homework08/Homework08";
+import Homework10 from "./Homeworks/Homework10/Homework10";
 
 function App() {
   return (
+    // <></> - fragmet. Он позволяет задать обертку (выступает в качестве родителя), чтобы
+    // не было ошибок если у нас есть несколько соседних элементов, но на самой странице никакой
+    // новый элемент добавлен не будет
     <>
       <GlobalStyles />
       {/* Lesson 05. TypeScript */}
@@ -25,13 +28,13 @@ function App() {
       {/* <Lesson07/> */}
       {/* Lesson 08. Controlled and uncontrolled components */}
       {/* <Lesson08 /> */}
+      
+      {/* <Lesson09 /> */}
+      {/* Lesson 09. ToDoList */}
 
-      {/* Homework 06 */}
-      {/*<Homework06 />*/}
-      {/*<Homework07 />*/}
-      {/*<Homework08 />*/}
-
-      <Lesson09 />
+      {/* Lesson 10. Formik, Yup */}
+      {/*<Lesson10 /> */}
+      <Homework10 />
     </>
   );
 }

@@ -3,13 +3,15 @@ import { ListContainer, ListItem } from "./styles";
 
 
 function ToDoList({ tasks }: ToDoListProps) {
-    return (
-    <ListContainer>
-      {tasks.map((item, index) => (
-        <ListItem key={`${item}-${index}`}>{item}</ListItem>
-      ))}
-    </ListContainer>
-  );
+
+const todoElements = tasks.map((item, index) => (
+  <ListItem key={`${item}-${index}`}>{item}</ListItem>
+));
+
+
+
+    return <ListContainer>{todoElements}</ListContainer>;
+    
 }
 
 export default ToDoList;
