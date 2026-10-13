@@ -8,10 +8,12 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson09 from "./lessons/Lesson09/Lesson09";
 
 // import Lesson10 from "./Lessons/Lesson10/Lesson10";
+import Lesson11 from "./Lessons/Lesson11/Lesson11";
+// import Lesson12 from "./Lessons/Lesson12/Lesson12";
 
 
 // Homeworks imports
-import Homework10 from "./Homeworks/Homework10/Homework10";
+// import Homework10 from "./Homeworks/Homework10/Homework10";
 
 function App() {
   return (
@@ -34,7 +36,13 @@ function App() {
 
       {/* Lesson 10. Formik, Yup */}
       {/*<Lesson10 /> */}
-      <Homework10 />
+      {/*<Homework10 />*/}
+
+       {/*Lesson 11. Employees App */}
+      <Lesson11 />
+       {/*Lesson 12 */}
+      {/*<Lesson12 />*/}
+      
     </>
   );
 }

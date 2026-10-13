@@ -5,6 +5,7 @@ export const InputWrapper = styled.div`
   flex-direction: column;
   gap: 6px;
   width: 100%;
+  margin-bottom: 20px;
 `;
 
 export const Label = styled.label`
@@ -25,3 +26,8 @@ export const InputComponent = styled.input`
   }
 `;
 
+export const ErrorMessage = styled.span`
+  font-size: 14px;
+  color: rgb(211, 47, 47);
+  margin-top: 2px;
+`;

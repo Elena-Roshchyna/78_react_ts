@@ -1,5 +1,10 @@
+
+
 import styled from "@emotion/styled";
-export const MyButton = styled.button`
+interface MyButtonProps {
+  disabled?: boolean;
+}
+export const MyButton = styled.button<MyButtonProps>`
   /* width: 350px; */
   width: 100%;
   padding: 20px;
@@ -10,4 +15,10 @@ export const MyButton = styled.button`
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 30px;
+  &:disabled {
+    background-color: rgb(71, 71, 78);
+    color: white;
+  }
 `;
+// export const Component = styled.p``;
