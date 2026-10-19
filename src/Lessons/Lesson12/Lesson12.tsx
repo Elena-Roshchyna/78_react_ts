@@ -4,12 +4,14 @@ import axios from "axios";
 import Input from "../../components/Input/Input";
 import { FormWrapper, Lesson12Wrapper, Result } from "./styles";
 import Button from "../../components/Button/Button";
+import Spinner from "../../Components/Spinner/Spinner";
 
 function Lesson12() {
   const [search, setSearch] = useState<string>("");
   const [joke, setJoke] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
   const onChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -41,6 +43,11 @@ function Lesson12() {
   //   Выполнение действия при обновлении компонента (массив зависимостей
   //   со значением(ями) state или prop)
   useEffect(() => {
+    if (!isMounted) {
+      setIsMounted(true);
+      return;
+    }
+
     fetchJokeData();
   }, [search]);
 
@@ -63,11 +70,15 @@ function Lesson12() {
           value={search}
           onChange={onChangeSearch}
         />
+
+        
         <Button name="GET RESULT" onClick={fetchJokeData} />
       </FormWrapper>
       <Result>{error ? error : joke}</Result>
+      {isLoading && <Spinner />}
     </Lesson12Wrapper>
   );
 }
 
 export default Lesson12;
+

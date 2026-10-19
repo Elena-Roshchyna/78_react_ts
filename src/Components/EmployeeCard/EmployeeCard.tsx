@@ -1,61 +1,42 @@
 import {
-    EmployeeCardWrapper,
-    CardItem,
-    CardLabel,
-    CardValue,
+  EmployeeCardWrapper,
+  CardItem,
+  CardLabel,
+  CardValue,
 } from "./styles";
+import type { EmployeeCardProps } from "./types";
 
 
-export interface EmployeeData {
-    name: string;
-    surname: string;
-    age: number;
-    jobPosition?: string;
+function EmployeeCard({ employee }: EmployeeCardProps) {
+  const { name, surname, age, jobPosition } = employee;
 
-}
-
-// Описываем пропсы компонента: карточка принимает обьект employee типа  EmployeeData
-interface EmployeeCardProps {
-    employee: EmployeeData;
-}
-
-function  EmployeeCard ({ employee }: EmployeeCardProps) {
-    const { name, surname, age, jobPosition } = employee;
-
-return (
+  
+  return (
     <EmployeeCardWrapper>
+      <CardItem>
+        <CardLabel>Name:</CardLabel>
+        <CardValue>{name}</CardValue>
+      </CardItem>
+
+      <CardItem>
+        <CardLabel>Surname:</CardLabel>
+        <CardValue>{surname}</CardValue>
+      </CardItem>
+
+      <CardItem>
+        <CardLabel>Age:</CardLabel>
+        <CardValue>{age}</CardValue>
+      </CardItem>
       
-
-<CardItem>
-    <CardLabel>Name:</CardLabel>
-    <CardValue>{name}</CardValue>
-</CardItem>
-
-
-<CardItem>
-    <CardLabel>Surname:</CardLabel>
-    <CardValue>{surname}</CardValue>
-</CardItem>
-
-<CardItem>
-    <CardLabel>Age:</CardLabel>
-    <CardValue>{age}</CardValue>
-</CardItem>
- 
-{/* Условный рендеринг: т.к. это необяз. поле, то мы показываем его блок в случае, если пользователь его ввел */}
-
-{jobPosition && (
-    <CardItem>
-    <CardLabel>Job Position:</CardLabel>
-    <CardValue>{jobPosition}</CardValue>
-</CardItem>
-        )}
-
-</EmployeeCardWrapper>
-
-    );
+      {/* Условный рендеринг: т.к. это необяз. поле, то мы показываем его блок в случае, если пользователь его ввел */}
+      {jobPosition && (
+        <CardItem>
+          <CardLabel>Job Position:</CardLabel>
+          <CardValue>{jobPosition}</CardValue>
+        </CardItem>
+      )}
+    </EmployeeCardWrapper>
+  );
 }
-
-
 
 export default EmployeeCard;
