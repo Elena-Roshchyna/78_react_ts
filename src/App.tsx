@@ -1,7 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import GlobalStyles from "./styles/GlobalStyles";
 import Layout from "./Components/Layout/Layout";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import Users from "./pages/Users/Users";
+import AdminUser from "./pages/Users/components/AdminUser/AdminUser";
+import Home from "./pages/Home/Home";
+import Clients from "./pages/Clients/Clients";
+import Google from "./pages/Clients/components/Google/Google";
+import Apple from "./pages/Clients/components/Apple/Apple";
+import SpaceX from "./pages/Clients/components/SpaceX/SpaceX";
+
+
+
 // Lessons imports
 import Lesson05 from "./Lessons/Lesson05/Lesson05";
 import Lesson06 from "./Lessons/Lesson06/Lesson06";
@@ -11,6 +22,8 @@ import Lesson09 from "./Lessons/Lesson09/Lesson09";
 import Lesson10 from "./Lessons/Lesson10/Lesson10";
 import Lesson11 from "./Lessons/Lesson11/Lesson11";
 import Lesson12 from "./Lessons/Lesson12/Lesson12";
+import Lesson15 from "./pages/Lesson15/Lesson15";
+
 
 
 // Homeworks imports
@@ -22,8 +35,6 @@ import Homework08 from "./Homeworks/Homework08/Homework08";
 
 import Homework10 from "./Homeworks/Homework10/Homework10";
 
-import Users from "./pages/Users/Users";
-import AdminUser from "./pages/Users/components/AdminUser/AdminUser";
 
 
 function App() {
@@ -42,7 +53,7 @@ function App() {
         <Routes>
           {/* Route - компонент, который содержит путь и страницу, которая отображается
           по этому пути */}
-          <Route path="/" element="Home" />
+          <Route path="/" element={<Home />} />
           <Route path="/lesson-05" element={<Lesson05 />} />
           <Route path="/lesson-06" element={<Lesson06 />} />
           <Route path="/lesson-07" element={<Lesson07 />} />
@@ -51,20 +62,26 @@ function App() {
           <Route path="/lesson-10" element={<Lesson10 />} />
           <Route path="/lesson-11" element={<Lesson11 />} />
           <Route path="/lesson-12" element={<Lesson12 />} />
+                            {/* Lesson 14. React Router */}
+          <Route path="/users" element={<Users />} />
 
+          <Route path="/users/admin" element={<AdminUser />} />
+                              {/* Lesson 15. Context */}
+          <Route path="/lesson-15" element={<Lesson15 />} />
           {/* Homeworks */}
 
             {/* <Route path="/homework-05" element={<Homework05 />} /> */}
           <Route path="/hw-06" element={<Homework06 />} />
           <Route path="/hw-07" element={<Homework07 />} />
           <Route path="/hw-08" element={<Homework08 />} />
-          <Route path="/hw3-10" element={<Homework10 />} />
+          <Route path="/hw-10" element={<Homework10 />} />
 
-                    {/* Lesson 14. React Router */}
-          <Route path="/users" element={<Users />} />
-
-          <Route path="/users/admin" element={<AdminUser />} />
-
+          <Route path="/clients" element={<Clients />}>
+          <Route path="google" element={<Google />} />
+          <Route path="apple" element={<Apple />} />
+          <Route path="spacex" element={<SpaceX />} />  
+          </Route>
+          
           {/* Страница PageNotFound будет показываться, если ни один из маршрутов
           выше не будет найден */}
           <Route path="*" element={<PageNotFound/>}/>
