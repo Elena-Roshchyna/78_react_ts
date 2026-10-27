@@ -10,6 +10,9 @@ import Clients from "./pages/Clients/Clients";
 import Google from "./pages/Clients/components/Google/Google";
 import Apple from "./pages/Clients/components/Apple/Apple";
 import SpaceX from "./pages/Clients/components/SpaceX/SpaceX";
+import UserProfile from "./pages/UserProfile/UserProfile";
+import GetProfile from "./pages/UserProfile/GetProfile/GetProfile";
+import Profile from "./pages/UserProfile/Profile/Profile";
 
 
 
@@ -80,7 +83,12 @@ function App() {
           <Route path="google" element={<Google />} />
           <Route path="apple" element={<Apple />} />
           <Route path="spacex" element={<SpaceX />} />  
-          </Route>
+        </Route>
+
+          <Route path="/user-profile" element={<UserProfile />}>
+  <Route path="get-profile" element={<GetProfile />} />
+  <Route path="profile" element={<Profile />} />
+</Route>
           
           {/* Страница PageNotFound будет показываться, если ни один из маршрутов
           выше не будет найден */}

@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Link, useNavigate } from "react-router-dom";
 
 import {
@@ -182,6 +183,14 @@ function Layout({ children }: LayoutProps) {
             })}
           >
             Clients
+          </StyledNavLink>
+          <StyledNavLink
+            to="/user-profile/get-profile"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? "underline" : "none",
+            })}
+          >
+            User Profile
           </StyledNavLink>
 
           </NavContainer>
